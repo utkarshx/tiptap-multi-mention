@@ -1,0 +1,41 @@
+# Tiptap Multi Mention
+
+
+This is a [Tiptap](https://tiptap.dev/) extension that allows you to use multiple mention instances of the plugin.
+
+## Usage
+
+Use the `createMention` function to create a mention extension.
+
+```ts
+import { createMention } from 'tiptap-multi-mention'
+
+const MentionSlash = createMention({
+  name: 'mentionSlash',
+  HTMLAttributes: {
+    class: 'cbSlash',
+  },
+  suggestion: {
+    ...SlashSuggestion,
+    char: '/',
+  },
+})
+
+const MentionAt = createMention({
+  name: 'mentionAt',
+  HTMLAttributes: {
+    class: 'mention',
+  },
+  suggestion: {
+    ...suggestion,
+    char: '@',
+  },
+})
+
+
+const extensions = [
+  MentionSlash,
+  MenntionAt,
+]
+
+```
